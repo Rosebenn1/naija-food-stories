@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Recipe — Naija Food Stories</title>
+
+  <link rel="stylesheet" href="css/styles.css">
+
+</head>
+<body>
+  <div class="story-container recipe-container">
+    <a class="story-back" href="index.html">← Back to Home</a>
+    <div id="recipeRoot"></div>
+  </div>
+
+  <script>
+    
+    const recipes = {
+      jollof: {
+        title: 'Jollof Rice',
+        image: 'images/jollofrice.jpg',
+        ingredients: [
+          '2 cups long-grain parboiled rice',
+          '4 large tomatoes or 1 can plum tomatoes',
+          '2 red bell peppers',
+          '1 onion',
+          '2 tbsp tomato paste',
+          '1/4 cup vegetable oil',
+          '2 tsp curry powder',
+          '2 stock cubes, salt to taste'
+        ],
+        steps: [
+          'Blitz tomatoes, peppers and half the onion to a smooth purée.',
+          'Fry chopped onion in oil, add tomato paste then the purée; simmer until reduced and slightly caramelised.',
+          'Add spices and stock; stir in rice and bring to a simmer.',
+          'Cover and cook on low until rice is tender. Fluff and serve.'
+        ],
+        external: { label: 'Watch a Jollof tutorial on YouTube', url: 'https://example.com/jollof-recipe' }
+      },
+
+      suya: {
+        title: 'Spicy Suya',
+        image: 'images/suya.webp',
+        ingredients: ['500g beef (thin slices)', '2 tbsp ground peanuts', '1 tbsp paprika', '1 tsp cayenne', 'Salt', 'Skewers'],
+        steps: ['Mix ground peanuts, paprika, cayenne and salt to form suya spice.', 'Coat meat slices with oil and rub spice mixture evenly.', 'Thread onto skewers and grill over high heat until charred.'],
+        external: { label: 'Suya recipe video', url: 'https://example.com/suya-video' }
+      },
+
+      egusi: {
+        title: 'Egusi Soup & Fufu',
+        image: 'images/egusiSoup.jpg',
+        ingredients: ['2 cups ground egusi', 'Assorted meat or fish', 'Leafy greens', 'Palm oil', 'Onion', 'Stock cubes'],
+        steps: ['Brown meat and set aside.', 'Fry onion in palm oil, add ground egusi and toast lightly.', 'Add stock gradually, add meat and simmer.', 'Stir in greens and finish with seasoning.'],
+        external: { label: 'Full Egusi recipe', url: 'https://example.com/egusi-recipe' }
+      },
+
+      peppersoup: {
+        title: 'Pepper Soup',
+        image: 'images/pepperSoup.jpg',
+        ingredients: ['Meat or fish', 'Pepper soup spices', 'Onion', 'Fresh herbs'],
+        steps: ['Boil meat until tender.', 'Add pepper soup spice mix and simmer briefly.', 'Finish with fresh herbs and serve hot.'],
+        external: { label: 'Pepper soup guide', url: 'https://example.com/pepper-soup' }
+      },
+
+      akara: {
+        title: 'Akara (Bean Fritters)',
+        image: 'images/akara.jpg',
+        ingredients: ['2 cups black-eyed peas (peeled)', '1 onion', 'Salt', 'Oil for frying'],
+        steps: ['Soak and peel the beans, blend with onion to a thick batter.', 'Season, then deep-fry spoonfuls until golden and crisp.'],
+        external: { label: 'Akara recipe website', url: 'https://example.com/akara' }
+      },
+
+      okro: {
+        title: 'Okro Soup',
+        image: 'images/okroSoup.jpg',
+        ingredients: ['Fresh okra (sliced)', 'Assorted meat', 'Palm oil', 'Onion', 'Seasoning'],
+        steps: ['Sauté onions and meat, add palm oil.', 'Stir in sliced okra and cook briefly to a velvety texture.', 'Season and serve with fufu.'],
+        external: { label: 'Okro soup tutorial', url: 'https://example.com/okro' }
+      }
+    };
+
+    function getQueryParam(name){
+      const params = new URLSearchParams(location.search);
+      return params.get(name);
+    }
+
+    function renderRecipe(id){
+      const root = document.getElementById('recipeRoot');
+      const r = recipes[id];
+      if(!r){
+        root.innerHTML = '<div class="story-hero"><h1>Recipe not found</h1><p class="story-meta">No recipe matches that id.</p></div>';
+        return;
+      }
+
+      root.innerHTML = `
+        <div class="recipe-hero">
+          <img src="${r.image}" alt="${r.title}">
+          <h1>${r.title}</h1>
+          <p class="story-meta">Ingredients & preparation</p>
+        </div>
+
+        <div class="section">
+          <h2>Ingredients</h2>
+          <div class="ingredients">
+            ${r.ingredients.map(i => `<div>• ${i}</div>`).join('')}
+          </div>
+        </div>
+
+        <div class="section">
+          <h2>Steps</h2>
+          <ol class="steps">
+            ${r.steps.map(s => `<li>${s}</li>`).join('')}
+          </ol>
+           <p><a class="btn btn-primary external-link" href="${r.external.url}" target="_blank" rel="noopener noreferrer">${r.external.label}</a></p>
+        </div>
+      `;
+    }
+
+    const id = getQueryParam('id') || 'jollof';
+    renderRecipe(id);
+  </script>
+</body>
+</html>

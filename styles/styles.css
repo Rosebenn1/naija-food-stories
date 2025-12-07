@@ -2,21 +2,10 @@
 /* ===== START BY IMPORTING YOUR FONTS ===== */ 
 /* ===== NEXT WRITE GLOBAL STYLES, THEN USE MEDIA QUERIES FOR LAYOUT/STYLE ADJUSTMENTS ===== */
 /* ===== STARTER CSS BELOW FOR body AND p IS JUST AN EXAMPLE... YOU MAY DELETE IT ===== */
-/* Reset */
-:root{
-    --bg:#000000;         /* main background, hero, footer */
-    --elev:#1A1A1A;       /* elevated surfaces and cards */
-    --text:#ffffff;       /* primary text & headings */
-    --muted:#B0B0B0;      /* secondary text (captions, teasers) */
-    --subtle:#808080;     /* tags, labels and borders */
-    --accent:#C62828;     /* primary CTA / urgent actions */
-    --white:#ffffff;       /* white color */
-    --gold:#D4AF37;       /* premium highlights */
-    --green:#2C5F2D;      /* natural indicators */
+
     --radius:12px;
     --gap:16px;
     font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
-}
 
 /* Reset */
 *{

@@ -5,102 +5,31 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Story — Naija Food Stories</title>
 
-  <link rel="stylesheet" href="css/styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@600;700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/styles.css">
+ <script rel="javascript" src="scripts/story.js" defer></script>
 </head>
 <body>
-    <div class="story-container">
-        <a class="story-back" href="index.html">← Back to Home</a>
-        <div id="storyRoot">
+  <div class="story-container">
+    <a class="story-back" href="search.html">← Back to Home</a>
+    <div id="storyRoot">
+      <!-- Story content rendered here -->
+    </div>
+    
+    <div id="myModal" class="modal hidden">
+        <div class="modal-content">
+          <div>
+              <button id="closeModalBtn" class="closeModal">X</button>
+          </div>
+            <div id="recipeRoot">
+              <!-- Recipe content rendered here -->
+            </div>
         </div>
     </div>
-
-    <script>
-        const stories = {
-            jollof: {
-                title: 'Classic Jollof Rice',
-                region: 'West Africa',
-                image: 'images/jollofrice.jpg',
-                teaser: 'Smoky, tomato-rich rice cooked with peppers, onions and a blend of warming spices.',
-                story: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.  \nLorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
-            },
-
-            suya: {
-                title: 'Spicy Suya Skewers',
-                region: 'Northern (popular across Nigeria)',
-                image: 'images/suya.webp',
-                teaser: 'Thinly sliced beef or chicken rubbed with peanut-chilli spice and grilled until charred.',
-                story: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.  \nLorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
-            },
-
-            egusi: {
-                title: 'Egusi Soup & Fufu',
-                region: 'East/West variants',
-                image: 'images/egusiSoup.jpg',
-                teaser: 'Melon-seed soup simmered with greens and tender meat, served with fufu.',
-                story: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.  \nLorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
-            },
-
-            peppersoup: {
-                title: 'Pepper Soup',
-                region: 'West Africa',
-                image: 'images/pepperSoup.jpg',
-                teaser: 'A spicy, aromatic broth often made with fish, goat or chicken.',
-                story: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.  \nLorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
-            },
-
-            akara: {
-                title: 'Akara (Bean Fritters)',
-                region: 'West Africa (Snack)',
-                image: 'images/akara.jpg',
-                teaser: 'Crispy fritters made from blended black-eyed peas.',
-                story: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.  \nLorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
-            },
-
-            okro: {
-                title: 'Okro Soup',
-                region: 'Various',
-                image: 'images/okroSoup.jpg',
-                teaser: 'Velvety okra stew enriched with fish or meat and palm oil.',
-                story: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.  \nLorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
-            }
-        };
-
-        function getQueryParam(name){
-            const params = new URLSearchParams (location.search);
-            return params.get(name);
-        }
-
-        function renderStory(id){
-            const root = document.getElementById('storyRoot');
-            const s = stories [id];
-            if(!s){
-                root.innerHTML = '<div class="hero"><h1>Story not found</h1><p class="meta">The requested story does not exist.</p></div>';
-                return;
-            }
-
-            root.innerHTML = `
-              <div class= "story-hero">
-                <img src="${s.image}" alt="${s.title}">
-                <h1>${s.title}</h1>
-                <div class="story-meta">${s.region}</div>
-                <p class="story-teaser">${s.teaser}</p>
-              </div>
-
-              <div class="section">
-                <h2>Story behind this dish</h2>
-                <p class="story-writeup"> ${s.story}</p>
-                <p><a class="btn btn-primary" href="recipe.html?id=${id}">View Recipe</a></p>
-              </div>  
-
-            `;  
-
-        }
-        
-        const id = getQueryParam('id') || 'jollof';
-        renderStory(id);
-
-    </script>
-
+    <div id="overlay" class="overlay hidden"></div>
+  </div>
 
 </body>
 </html>

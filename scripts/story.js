@@ -1,153 +1,4 @@
-/* WRITE YOUR JS HERE... YOU MAY REQUIRE MORE THAN ONE JS FILE. IF SO SAVE IT SEPARATELY IN THE SCRIPTS DIRECTORY */
-// Mobile nav toggle
-const toggle = document.getElementById('navToggle');
-const navList = document.getElementById('nav-list');
-if (toggle && navList) {
-  // start collapsed on small screens
-  function collapseIfMobile() {
-    if (window.innerWidth <= 760) {
-      navList.classList.remove('open');
-      toggle.setAttribute('aria-expanded', 'false');
-    } else {
-      // make sure nav is visible on larger screens
-      navList.classList.remove('open');
-      navList.style.display = '';
-      toggle.setAttribute('aria-expanded', 'false');
-    }
-  }
-
-  toggle.addEventListener('click', () => {
-    const expanded = toggle.getAttribute('aria-expanded') === 'true';
-    const willOpen = !expanded;
-    toggle.setAttribute('aria-expanded', String(willOpen));
-    if (willOpen) {
-      navList.classList.add('open');
-    } else {
-      navList.classList.remove('open');
-    }
-  });
-
-  window.addEventListener('resize', () => {
-    if (window.innerWidth > 760) {
-      // ensure nav is visible and not using mobile open state
-      navList.classList.remove('open');
-      navList.style.display = '';
-      toggle.setAttribute('aria-expanded', 'false');
-    }
-  });
-
-  // initialize
-  collapseIfMobile();
-}
-
-// Filtering functionality for recipes
-// Note: cards are rendered dynamically from the `stories` dataset, so query them when filtering.
-const searchInput = document.getElementById('q') || document.querySelector('.search-box input[type="search"]');
-const regionInline = document.getElementById('regionInline');
-const cuisineInline = document.getElementById('cuisineInline');
-const occasionInline = document.getElementById('occasionInline');
-const regionButtons = Array.from(document.querySelectorAll('.region-card'));
-const regionSelectMobile = document.getElementById('region-card');
-
-function normalize(text) {
-  return (text || '').toString().trim().toLowerCase();
-}
-
-function matchOccasion(cardOccasion, filterOccasion) {
-  if (!filterOccasion || filterOccasion === 'any') return true;
-  if (!cardOccasion) return false;
-  return cardOccasion === filterOccasion;
-}
-
-function filterCards() {
-  const q = normalize(searchInput ? searchInput.value : '');
-  const region = (regionInline && regionInline.value) || (regionSelectMobile && regionSelectMobile.value) || 'all';
-  const cuisine = (cuisineInline && cuisineInline.value) || 'any';
-  const occasion = (occasionInline && occasionInline.value) || 'any';
-
-  const cards = Array.from(document.querySelectorAll('.cards-grid .card'));
-  cards.forEach(card => {
-    let visible = true;
-
-    // text search against title and description
-    if (q) {
-      const title = normalize(card.querySelector('h3') && card.querySelector('h3').textContent);
-      const desc = normalize(card.querySelector('p') && card.querySelector('p').textContent);
-      if (!(title.includes(q) || desc.includes(q))) visible = false;
-    }
-
-    // region
-    const cardRegion = (card.dataset.region || '').toLowerCase();
-    if (region && region !== 'all' && cardRegion !== region) visible = false;
-
-    // cuisine
-    const cardCuisine = (card.dataset.cuisine || '').toLowerCase();
-    if (cuisine && cuisine !== 'any' && cardCuisine !== cuisine) visible = false;
-
-    // Occasion
-    const cardOccasion = (card.dataset.occasion || '').toLowerCase();
-    if (occasion && occasion !== 'any' && !matchOccasion(cardOccasion, occasion)) visible = false;
-
-    card.style.display = visible ? '' : 'none';
-  });
-}
-
-// Debounce helper
-function debounce(fn, wait = 200) {
-  let t;
-  return (...args) => { clearTimeout(t); t = setTimeout(() => fn(...args), wait); };
-}
-
-// Wire inputs
-if (searchInput) {
-  searchInput.addEventListener('input', debounce(filterCards, 180));
-}
-if (regionInline) {
-  regionInline.addEventListener('change', () => { filterCards(); });
-}
-if (cuisineInline) {
-  cuisineInline.addEventListener('change', () => { filterCards(); });
-}
-if (occasionInline) {
-  occasionInline.addEventListener('change', () => { filterCards(); });
-}
-if (regionSelectMobile) {
-  regionSelectMobile.addEventListener('change', () => { filterCards(); });
-}
-
-// Wire quick region buttons
-regionButtons.forEach(btn => {
-  btn.addEventListener('click', () => {
-    const selected = btn.dataset.region || 'all';
-    // update inline select if present
-    if (regionInline) regionInline.value = selected;
-    if (regionSelectMobile) regionSelectMobile.value = selected;
-    // toggle aria-pressed
-    regionButtons.forEach(b => b.setAttribute('aria-pressed', 'false'));
-    btn.setAttribute('aria-pressed', 'true');
-    filterCards();
-  });
-});
-
-// Keep existing responsive filter behaviour
-function adaptFilters() {
-  const searchBox = document.querySelector('.search-area');
-  const searchMinBox = document.querySelector('.search-area-min');
-  if (window.innerWidth <= 760) {
-    if (searchBox) searchBox.style.display = 'none';
-    if (searchMinBox) searchMinBox.style.display = 'block';
-  } else {
-    if (searchBox) searchBox.style.display = 'block';
-    if (searchMinBox) searchMinBox.style.display = 'none';
-  }
-}
-adaptFilters();
-window.addEventListener('resize', adaptFilters);
-
-// initial filter run
-filterCards();
-
-/* Stories dataset and modal logic (used by index to show stories)*/
+//story.html logic
 const stories = {
   jollof: {
     title: 'Classic Jollof Rice',
@@ -205,7 +56,9 @@ const stories = {
     title: 'Pepper Soup',
     region: 'Western',
     image: 'images/pepperSoup.jpg',
-    teaser: 'A spicy, aromatic broth often made with fish, goat or chicken.', occasion: 'NightLife', cuisine: 'Premium',
+    teaser: 'A spicy, aromatic broth often made with fish, goat or chicken.', 
+    occasion: 'NightLife', 
+    cuisine: 'Premium',
     story: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.  \nLorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
     ingredients: ['Meat or fish', 'Pepper soup spices', 'Onion', 'Fresh herbs'],
     steps: ['Boil meat until tender.', 'Add pepper soup spice mix and simmer briefly.', 'Finish with fresh herbs and serve hot.'],
@@ -217,7 +70,9 @@ const stories = {
     title: 'Akara (Bean Fritters)',
     region: 'Western (Snack)',
     image: 'images/akara.jpg',
-    teaser: 'Crispy fritters made from blended black-eyed peas.', occasion: 'NightLife', cuisine: 'Comfort',
+    teaser: 'Crispy fritters made from blended black-eyed peas.', 
+    occasion: 'NightLife', 
+    cuisine: 'Comfort',
     story: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.  \nLorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
     ingredients: ['2 cups black-eyed peas (peeled)', '1 onion', 'Salt', 'Oil for frying'],
     steps: ['Soak and peel the beans, blend with onion to a thick batter.', 'Season, then deep-fry spoonfuls until golden and crisp.'],
@@ -228,35 +83,63 @@ const stories = {
     title: 'Okro Soup',
     region: 'Various',
     image: 'images/okroSoup.jpg',
-    teaser: 'Velvety okra stew enriched with fish or meat and palm oil.', occasion: 'any', cuisine: 'Premium',
+    teaser: 'Velvety okra stew enriched with fish or meat and palm oil.', 
+    occasion: 'any', 
+    cuisine: 'Premium',
     story: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.  \nLorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
     ingredients: ['Fresh okra (sliced)', 'Assorted meat', 'Palm oil', 'Onion', 'Seasoning'],
     steps: ['Sauté onions and meat, add palm oil.', 'Stir in sliced okra and cook briefly to a velvety texture.', 'Season and serve with fufu.'],
-    external: { label: 'Okro soup tutorial', url: 'https://example.com/okro' }
+    external: { label: 'Okro soup tutorial', 
+    url: 'https://example.com/okro' }
   },
   moimoi:
   {
-    title: 'Moin Moin', region: 'Western', image: 'images/moimoin.jpeg', teaser: 'Steamed bean pudding often served as a side.', occasion: 'Wedding', cuisine: 'Premium', story: 'A protein-rich steamed bean pudding enjoyed at many gatherings.',
+    title: 'Moin Moin', 
+    region: 'Western', 
+    image: 'images/moimoin.jpeg', 
+    teaser: 'Steamed bean pudding often served as a side.', 
+    occasion: 'Wedding', 
+    cuisine: 'Premium', 
+    story: 'A protein-rich steamed bean pudding enjoyed at many gatherings.',
     ingredients: ['2 cups peeled beans', '1 onion', 'Vegetable oil', 'Seasoning'],
     steps: ['Blend beans with onion to a smooth batter.', 'Season and steam the batter in tins or leaves until set.'],
     external: { label: 'Moin Moin guide', url: 'https://example.com/moinmoin' }
   },
   ogbono: {
-    title: 'Ogbono Soup', region: 'Various', image: 'images/ogbono.jpeg', teaser: 'Thick soup made from ground ogbono seed.', occasion: 'any', cuisine: 'Premium', story: 'Known for its slippery texture and hearty flavours.',
+    title: 'Ogbono Soup', 
+    region: 'Various', 
+    image: 'images/ogbono.jpeg', 
+    teaser: 'Thick soup made from ground ogbono seed.', 
+    occasion: 'any', 
+    cuisine: 'Premium', 
+    story: 'Known for its slippery texture and hearty flavours.',
     ingredients: ['Ground ogbono', 'Assorted meats', 'Leafy greens', 'Palm oil'],
     steps: ['Toast and dissolve ogbono in stock to thicken.', 'Add meats and greens and simmer.'],
     external: { label: 'Ogbono recipe', url: 'https://example.com/ogbono' }
   },
   nkwobi:
   {
-    title: 'Nkwobi', region: 'Eastern', image: 'images/nkwobi.jpeg', teaser: 'Spiced cow-foot dish in palm oil sauce.', occasion: 'NightLife', cuisine: 'Comfort', story: 'A festive delicacy with bold, spicy notes.',
+    title: 'Nkwobi', 
+    region: 'Eastern', 
+    image: 'images/nkwobi.jpeg', 
+    teaser: 'Spiced cow-foot dish in palm oil sauce.', 
+    occasion: 'NightLife', 
+    cuisine: 'Comfort', 
+    story: 'A festive delicacy with bold, spicy notes.',
     ingredients: ['Cow foot', 'Palm oil', 'Spices', 'Utazi leaves'],
     steps: ['Cook cow foot until tender.', 'Mix with spiced palm oil sauce and serve.'],
     external: { label: 'Nkwobi recipe', url: 'https://example.com/nkwobi' }
   },
   banga:
   {
-    title: 'Banga Soup', region: 'South-South', image: 'images/banga.jpeg', teaser: 'Palm-nut based soup rich with spices.', occasion: 'any', cuisine: 'Premium', story: 'A deeply flavored soup commonly paired with starches.', ingredients: ['Palm nut extract', 'Assorted fish/meat', 'Spices', 'Banga spice mix'],
+    title: 'Banga Soup', 
+    region: 'South-South', 
+    image: 'images/banga.jpeg', 
+    teaser: 'Palm-nut based soup rich with spices.', 
+    occasion: 'any', 
+    cuisine: 'Premium', 
+    story: 'A deeply flavored soup commonly paired with starches.', 
+    ingredients: ['Palm nut extract', 'Assorted fish/meat', 'Spices', 'Banga spice mix'],
     steps: ['Extract palm fruit to make the base.', 'Add spices and proteins, simmer until ready.'],
     external: { label: 'Banga recipe', url: 'https://example.com/banga' }
   },
@@ -308,19 +191,33 @@ const stories = {
     external: { label: 'Okpa recipe', url: 'https://example.com/okpa' }
   },
   ofeowerri: {
-    title: 'Ofe Owerri', region: 'Eastern', image: 'images/ofeOwerri.jpeg', teaser: 'Hearty vegetable soup from Owerri.', occasion: 'Wedding', cuisine: 'Premium', story: 'A protein-packed vegetable soup.',
+    title: 'Ofe Owerri', 
+    region: 'Eastern', 
+    image: 'images/ofeOwerri.jpeg', 
+    teaser: 'Hearty vegetable soup from Owerri.', 
+    occasion: 'Wedding', 
+    cuisine: 'Premium', 
+    story: 'A protein-packed vegetable soup.',
     ingredients: ['Local greens', 'Proteins', 'Palm oil', 'Spices'],
     steps: ['Prepare a rich vegetable soup with proteins and local leaves.'],
     external: { label: 'Ofe Owerri', url: 'https://example.com/ofeowerri' }
   },
   ukwa: {
-    title: 'Ukwa (Breadfruit)', region: 'Eastern', image: 'images/ukwa.jpeg', teaser: 'Boiled breadfruit often cooked with palm oil and spices.', occasion: 'Wedding', cuisine: 'Premium', story: 'A seasonal specialty with a unique texture.',
+    title: 'Ukwa (Breadfruit)', region: 'Eastern', image: 'images/ukwa.jpeg', 
+    teaser: 'Boiled breadfruit often cooked with palm oil and spices.', 
+    occasion: 'Wedding', cuisine: 'Premium', 
+    story: 'A seasonal specialty with a unique texture.',
     ingredients: ['Ukwa (breadfruit)', 'Palm oil', 'Pepper', 'Seasoning'],
     steps: ['Boil ukwa and season; optionally cook with palm oil and spices.'],
     external: { label: 'Ukwa guide', url: 'https://example.com/ukwa' }
   },
   pepperedfish: {
-    title: 'Peppered Fish', region: 'Coastal', image: 'images/pepperedFish.jpeg', teaser: 'Grilled fish in a spicy pepper sauce.', occasion: 'NightLife', cuisine: 'Street', story: 'Smoky grilled fish served with a fiery sauce.',
+    title: 'Peppered Fish', 
+    region: 'Coastal', 
+    image: 'images/pepperedFish.jpeg', 
+    teaser: 'Grilled fish in a spicy pepper sauce.', 
+    occasion: 'NightLife', cuisine: 'Street', 
+    story: 'Smoky grilled fish served with a fiery sauce.',
     ingredients: ['Whole fish', 'Peppers', 'Onion', 'Oil'],
     steps: ['Grill or fry fish, prepare pepper sauce and serve together.'],
     external: { label: 'Peppered fish recipe', url: 'https://example.com/pepperedfish' }
@@ -328,37 +225,89 @@ const stories = {
 };
 
 
-// Render the cards grid from the stories dataset
-function renderCardsFromStories() {
-  const grid = document.querySelector('.cards-grid');
-  if (!grid) return;
-  grid.innerHTML = '';
-  Object.keys(stories).forEach((id) => {
-    const s = stories[id];
-    const regionAttr = (s.region || 'Various').toString().toLowerCase().split(/[\/ ,]+/)[0];
-    const card = document.createElement('article');
-    card.className = 'card';
-    card.setAttribute('role', 'listitem');
-    card.setAttribute('aria-labelledby', `d-${id}`);
-    card.dataset.region = regionAttr;
-    card.dataset.cuisine = s.cuisine || 'any';
-    card.dataset.occasion = s.occasion || 'any';
-
-    card.innerHTML = `
-      <img src="${s.image}" alt="${s.title}">
-      <div class="card-body">
-        <div class="meta"><span class="badge-premium">${s.region}</span></div>
-        <h3 id="d-${id}">${s.title}</h3>
-        <p>${s.teaser || ''}</p>
-        <div class="actions">
-          <a class="btn btn-primary view-story" href="story.html?id=${id}" data-id="${id}">View Story</a>
-        </div>
-      </div>
-    `;
-
-    grid.appendChild(card);
-  });
+function getQueryParam(name) {
+  const params = new URLSearchParams(location.search);
+  return params.get(name);
 }
 
-// Render cards immediately so filters can work
-renderCardsFromStories();
+function renderStory(id) {
+  const root = document.getElementById('storyRoot');
+  console.log(root);
+  const s = stories[id];
+  if (!s) {
+    root.innerHTML = '<div class="hero"><h1>Story not found</h1><p class="meta">The requested story does not exist.</p></div>';
+    return;
+  }
+
+  root.innerHTML = `
+        <div class="story-hero">
+          <img src="${s.image}" alt="${s.title}">
+          <h1>${s.title}</h1>
+          <div class="story-meta">${s.region}</div>
+          <p class="story-teaser">${s.teaser}</p>
+        </div>
+
+        <div class="section">
+          <h2>Story behind this dish</h2>
+          <p class="story-writeup"> ${s.story}</p>
+          <a class="btn btn-primary view-recipe" id="openModalBtn">View Recipe</a>
+        </div>
+
+      `;
+}
+
+const id = getQueryParam('id');
+renderStory(id);
+
+// Modal logic
+const openModalBtn = document.getElementById('openModalBtn');
+const closeModalBtn = document.getElementById('closeModalBtn');
+const myModal = document.getElementById('myModal');
+const overlay = document.getElementById('overlay');
+
+openModalBtn.addEventListener('click', () => {
+  renderRecipe(id);
+  myModal.classList.remove('hidden');
+  overlay.classList.remove('hidden');
+});
+
+closeModalBtn.addEventListener('click', () => {
+  myModal.classList.add('hidden');
+  overlay.classList.add('hidden');
+});
+
+overlay.addEventListener('click', () => {
+  myModal.classList.add('hidden');
+  overlay.classList.add('hidden');
+});
+
+function renderRecipe(id) {
+  const root = document.getElementById('recipeRoot');
+  const r = stories[id];
+  if (!r) {
+    root.innerHTML = '<div class="story-hero"><h1>Recipe not found</h1><p class="story-meta">No recipe matches that id.</p></div>';
+    return;
+  }
+
+  root.innerHTML = `
+        <div class="recipe-hero">
+          <h1>${r.title}</h1>
+          <p class="story-meta">Ingredients & preparation</p>
+        </div>
+
+        <div class="section">
+          <h2>Ingredients</h2>
+          <div class="ingredients">
+            ${r.ingredients.map(i => `<div>• ${i}</div>`).join('')}
+          </div>
+        </div>
+
+        <div class="section">
+          <h2>Steps</h2>
+          <ol class="steps">
+            ${r.steps.map(s => `<li>${s}</li>`).join('')}
+          </ol>
+           <p><a class="btn btn-primary external-link" href="${r.external.url}" target="_blank" rel="noopener noreferrer">${r.external.label}</a></p>
+        </div>
+      `;
+}

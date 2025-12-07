@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- PUT A TITLE IN HERE -->
+    <title>Naija Food Stories</title>
+    <!-- PUT A DESCRIPTION IN HERE -->
+    <meta name="description" content="stories behind nigeria most beloved dishes" />
+    <!-- LINK TO NORMALIZE (FOR CONSISTENCY) -->
+    <link rel="stylesheet" href="styles/normalize.css" />
+    <!-- LINK TO ANY FRAMEWORK STYLES HERE-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@600;700&family=Inter:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
+    <!-- LINK TO YOUR STYLES -->
+    <link rel="stylesheet" href="styles/styles.css" />
+    <!-- LINK TO EXTERNAL JS LIBRARIES HERE -->
+    <!-- LINK TO YOUR JS HERE. NOTE THE DEFER ATTRIBUTE. -->
+    <script rel="javascript" src="scripts/scripts.js" defer></script>
+  </head>
+
+  <body>
+    <nav class="site-nav" role="navigation" aria-label="Main navigation">
+        <div class="brand" role="link" aria-label="Naija Food Stories home">
+            <div class="logo" aria-hidden="true">NFS</div>
+            <div class="site-title">
+                <strong>Naija Food Stories</strong>
+            </div>
+        </div>
+
+        <button class="nav-toggle" aria-expanded="false" aria-controls="nav-list" id="navToggle">Menu</button>
+
+        <div class="nav-links" id="nav-list" role="menubar" aria-label="Primary">
+            <a href="index.html" id="nav-home">Home</a>
+            <a href="#about" id="nav-about">About</a>
+           
+        </div>
+    </nav>
+
+    <header class="hero" id="home" aria-labelledby="hero-title">
+        <div class="hero-inner" id="hero-content">
+            <h1 id="hero-title">Discover Stories about Nigerian Dishes</h1>
+            <p>Explore recipes from coast to savanna — jollof, egusi, suya and more. Curated, premium picks highlighted
+                for you.</p>
+        </div>
+    </header>
+
+    <section class="search-wrap" aria-label="Search and region filters">
+        <div class="search-area-min">
+            <form class="search-box" id="formBox" role="search" action="#" method="get" aria-label="Search recipes">
+                <input type="search" name="q" placeholder="Search dishes, ingredients, or regions..."
+                    aria-label="Search">
+            </form>
+
+            <div class="filters-column" aria-label="Region filters">
+
+                <div class="region-filters" role="toolbar" aria-label="Quick region filters">
+                    <button class="region-card" data-region="all" aria-pressed="true" type="button">
+                        All regions
+                    </button>
+
+                    <button class="region-card" data-region="western" aria-pressed="false" type="button">
+                        Western
+                    </button>
+
+                    <button class="region-card" data-region="eastern" aria-pressed="false" type="button">
+                        Eastern
+                    </button>
+                    <button class="region-card" data-region="northern" aria-pressed="false" type="button">
+                        Northern
+                    </button>
+                </div>
+
+            
+            </div>
+        </div>
+
+        <div class="search-area">
+            <form class="search-box" role="search" action="#" method="get" aria-label="Search recipes">
+                 <input id="q" type="search" name="q" placeholder="Search dishes, ingredients, or regions..."
+                    aria-label="Search">
+                <div class="inline-filters" >
+                    <div class="inline-filter" title="Region filter">
+                        <select id="regionInline" name="region" aria-label="Region">
+                            <option value="all">All regions</option>
+                            <option value="western">Western region</option>
+                            <option value="eastern">Eastern region</option>
+                            <option value="northern">Northern region</option>
+                        </select>
+                    </div>
+
+                    <div class="inline-filter" title="Cuisine filter">
+                        <select id="cuisineInline" name="cuisine" aria-label="Cuisine">
+                            <option value="any">All Meal Type</option>
+                            <option value="street">Street food</option>
+                            <option value="comfort">Comfort</option>
+                            <option value="premium">Premium</option>
+                        </select>
+                    </div>
+
+                    <div class="inline-filter" title="Occasion filter">
+                        <select id="occasionInline" name="occasion" aria-label="Occasion">
+                            <option value="any">All Ocassions</option>
+                            <option value="wedding">Weddings</option>
+                            <option value="birthday">Birthdays</option>
+                            <option value="nightlife">Night-Life</option>
+                        </select>
+                    </div>
+                </div>
+               
+
+            </form>
+        </div>
+    </section>
+
+    <main>
+        <section id="regions" aria-label="Regions grid">
+            <div class="cards-grid" role="list">
+                <!-- Stories are rendered by the javascript here -->
+                
+            </div>
+        </section>
+        
+    </main>
+
+    <footer role="contentinfo">
+        <div class="footer-inner">           
+            <nav class="footer-links" aria-label="Footer">
+                <a href="#about">About</a>
+            </nav>
+        </div>
+    </footer>
+                
+    <!-- YOUR EXTERNAL PLUG-IN MAY ASK YOU TO PUT A SCRIPT TAG HERE. -->
+  </body>
+</html>

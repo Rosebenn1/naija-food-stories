@@ -1,13 +1,13 @@
 # CM523 Project Starter
 
 You may use this repo as a 'starter' kit for your project. In it you will find...
-- the homepage (index.html) boilerplate with comments/annotations.
+- the homepage (search.html) boilerplate with comments/annotations.
 - a styles directory that includes the `normalize.css` reset and your `styles.css` file (write all of your CSS in that file).
 - a scripts directory that includes a `scripts.js` file (where you will write your JS). You may need to add a vendor directory here where you can include external JS libraries.
 - an images directory (put ALL of your images in this directory).
 
 ## A few notes
-- index.html is your home page -- it is not home.html or anything else!
+- search.html is your home page -- it is not index.html or anything else!
 - No capital letters or spaces in any file or directory.
 - Think critically about your naming conventions. Things like page1.html, page2.html, are typically not helpful. Same with your CSS class names and JS variable/function names.
 - You don't have to create a directory for pages; they belong in the main directory.

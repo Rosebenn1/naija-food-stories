@@ -154,7 +154,8 @@ const stories = {
     title: 'Jollof Rice',
     region: 'Western',
     image: 'images/jollofrice.jpg',
-    teaser: 'Nigeria most beloved rice dish, known for its rich tomato-based sauce and smoky flavor. Often called party jollof when made in large quantities.', occasion: 'Birthday',
+    teaser: 'Nigeria most beloved rice dish, known for its rich tomato-based sauce and smoky flavor. Often called party jollof when made in large quantities.', 
+    occasion: 'Birthday',
     cuisine: 'Premium',
     story: 'No dish sparks more passion across West Africa than Jollof Rice. This vibrant, tomato-red rice originated with the Wolof people of Senegal, but as it traveled along trade routes, each country made it their own. Nigerian Jollof is bold and smoky, cooked until the bottom develops a prized crispy layer called the party that guests fight over at celebrations. The famous Nigeria-Ghana Jollof Wars have become legendary on social media, with each country fiercely defending their version superiority. Nigerians insist their Jollof is smokier and more flavorful. Ghanaians counter with claims of aromatic perfection. This friendly rivalry has done more to celebrate the dish globally than any marketing campaign ever could. At Nigerian parties, Jollof Rice is not just food, it is a measure of success. If you want to know if a party was good, ask about the Jollof, goes the saying. Party Jollof, cooked in massive pots over open wood fires, develops flavors impossible to replicate in home kitchens. The sound of Jollof being served is the sound of celebration itself. For Nigerians abroad, the aroma of Jollof Rice cooking is an instant transport home, to Sunday afternoons, grandmothers kitchen, and the taste of belonging. It is memory, celebration, and identity in every grain.',
     ingredients: [
@@ -172,7 +173,6 @@ const stories = {
       '1 teaspoon curry powder',
       'Salt to taste',
       '2 seasoning cubes',
-
 
     ],
     steps: [

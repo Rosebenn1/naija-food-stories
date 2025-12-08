@@ -1,41 +1,67 @@
 //story.html logic
 const stories = {
   jollof: {
-    title: 'Classic Jollof Rice',
+    title: 'Jollof Rice',
     region: 'Western',
     image: 'images/jollofrice.jpg',
-    teaser: 'Smoky, tomato-rich rice cooked with peppers, onions and a blend of warming spices.', occasion: 'Birthday',
+    teaser: 'Nigeria most beloved rice dish, known for its rich tomato-based sauce and smoky flavor. Often called party jollof when made in large quantities.', occasion: 'Birthday',
     cuisine: 'Premium',
-    story: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.  \nLorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+    story: 'No dish sparks more passion across West Africa than Jollof Rice. This vibrant, tomato-red rice originated with the Wolof people of Senegal, but as it traveled along trade routes, each country made it their own. Nigerian Jollof is bold and smoky, cooked until the bottom develops a prized crispy layer called the party that guests fight over at celebrations. The famous Nigeria-Ghana Jollof Wars have become legendary on social media, with each country fiercely defending their version superiority. Nigerians insist their Jollof is smokier and more flavorful. Ghanaians counter with claims of aromatic perfection. This friendly rivalry has done more to celebrate the dish globally than any marketing campaign ever could. At Nigerian parties, Jollof Rice is not just food, it is a measure of success. If you want to know if a party was good, ask about the Jollof, goes the saying. Party Jollof, cooked in massive pots over open wood fires, develops flavors impossible to replicate in home kitchens. The sound of Jollof being served is the sound of celebration itself. For Nigerians abroad, the aroma of Jollof Rice cooking is an instant transport home, to Sunday afternoons, grandmothers kitchen, and the taste of belonging. It is memory, celebration, and identity in every grain.',
     ingredients: [
-      '2 cups long-grain parboiled rice',
-      '4 large tomatoes or 1 can plum tomatoes',
-      '2 red bell peppers',
-      '1 onion',
-      '2 tbsp tomato paste',
-      '1/4 cup vegetable oil',
+      '4 cups long-grain parboiled rice',
+      '6 medium tomatoes, blended',
+      '3 red bell peppers (tatashe), blended',
+      '2 medium onions',
+      '2-3 scotch bonnet peppers',
+      '1/2 cup vegetable oil',
       '2 tsp curry powder',
-      '2 stock cubes, salt to taste'
+      '2 stock cubes, salt to taste',
+      '3 tablespoons tomato paste',
+      '2 cups chicken or beef stock',
+      '2 teaspoons thyme',
+      '1 teaspoon curry powder',
+      'Salt to taste',
+      '2 seasoning cubes',
+
+
     ],
     steps: [
-      'Blitz tomatoes, peppers and half the onion to a smooth purée.',
-      'Fry chopped onion in oil, add tomato paste then the purée; simmer until reduced and slightly caramelised.',
-      'Add spices and stock; stir in rice and bring to a simmer.',
-      'Cover and cook on low until rice is tender. Fluff and serve.'
+      '1. Blend tomatoes, red bell peppers, scotch bonnet, and one onion until smooth.',
+      'Boil the blended mixture for 20-30 minutes until reduced by one-third.',
+      'Heat oil in a heavy-bottomed pot and fry sliced onions until golden.',
+      'Add tomato paste and fry for 2-3 minutes.',
+      'Pour in the reduced pepper mixture and fry until oil floats on top (about 20 minutes).',
+      'Add stock, seasonings, thyme, curry, and bay leaves. Stir well.',
+      'Wash and add rice, ensuring liquid covers rice by about an inch.',
+      'Cover tightly with foil, then the lid. Cook on low heat for 30-40 minutes.',
+      'Stir gently and let it steam until rice is tender and slightly smoky at the bottom.',
     ],
-    external: { label: 'Watch a Jollof tutorial on YouTube', url: 'https://example.com/jollof-recipe' }
+      external: { label: 'Watch a Jollof tutorial on YouTube', url: 'https://www.youtube.com/watch?v=z4tNAyRdo70'}
   },
 
   suya: {
-    title: 'Spicy Suya Skewers',
+    title: 'Suya (Grilled Spiced Meat)',
     region: 'Northern (popular across Nigeria)',
     image: 'images/suya.webp',
     teaser: 'Thinly sliced beef or chicken rubbed with peanut-chilli spice and grilled until charred.',
     occasion: 'NightLife', cuisine: 'Street food',
-    story: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.  \nLorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    ingredients: ['500g beef (thin slices)', '2 tbsp ground peanuts', '1 tbsp paprika', '1 tsp cayenne', 'Salt', 'Skewers'],
-    steps: ['Mix ground peanuts, paprika, cayenne and salt to form suya spice.', 'Coat meat slices with oil and rub spice mixture evenly.', 'Thread onto skewers and grill over high heat until charred.'],
-    external: { label: 'Suya recipe video', url: 'https://example.com/suya-video' }
+    story: ['Fire, Spice, and the Night Markets of the North', 'As the sun sets over Nigerian cities, smoke rises from countless roadside grills, and the intoxicating aroma of roasting meat fills the air. Nigerians from all walks of life make their way to their favorite "Mai Suya"—the suya man. This spicy grilled meat, coated in the peanut-based yaji spice blend, it is the most beloved Nigerian street food. The story of Suya begins with the Hausa people, nomadic cattle herders who needed ways to preserve meat in scorching heat. They developed thin slices of beef coated in spices that could last for days. What began as survival food evolved into art, with each Mai Suya guarding his unique yaji recipe—ground peanuts, cayenne, ginger, and secret spices that regular customers can identify by taste alone. Watch a skilled Mai Suya at work and you witness a performance. Meat sliced paper-thin, threaded onto skewers, dipped in oil, pressed into mounds of yaji, and grilled over glowing coals. The serving ritual is sacred: meat chopped, topped with fresh onions and tomatoes, wrapped in newspaper, and handed over still smoking. Suya culture is democratic. At any busy suya spot, you will find everyone businessmen, students, couples on dates, friends solving the proplems in Nigeria. For those few moments around the grill, social barriers dissolve. Everyone is equal before the suya.',],
+    ingredients: [
+      '2lbs beef sirloin or flank steak, thinly sliced',
+      'For Yaji Spice (Suya Spice):',
+      '1 cup roasted peanuts, ground',
+      '2 tablespoons paprika',
+      '1 tablespoon cayenne pepper',
+      '1 tablespoon ginger powder',
+      '1 tablespoon garlic powder',
+      '1 tablespoon onion powder',
+      '1 teaspoon salt',
+      '1/2 teaspoon white pepper',
+      'Vegetable oil for coating',
+      'Wooden skewers, soaked in water',
+],
+    steps: ['Combine all yaji spice ingredients and mix thoroughly.', 'Slice beef very thin, against the grain.', 'Brush meat slices with vegetable oil.', 'Coat generously with yaji spice on all sides.', 'Thread meat onto soaked wooden skewers in accordion style.','Marinate for at least 1 hour (or overnight in refrigerator).', 'Grill over hot charcoal or broil in oven at high heat for 3-4 minutes per side.', 'Sprinkle with more yaji spice before serving.', 'Serve with sliced onions, tomatoes, and fresh cabbage.',],
+    external: { label: 'Suya recipe video', url: 'https://www.youtube.com/watch?v=jrfiEXS0A-M'}
   },
 
   egusi: {
@@ -45,10 +71,21 @@ const stories = {
     teaser: 'Melon-seed soup simmered with greens and tender meat, served with fufu.', 
     occasion: 'Wedding', 
     cuisine: 'Premium',
-    story: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.  \nLorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    ingredients: ['2 cups ground egusi', 'Assorted meat or fish', 'Leafy greens', 'Palm oil', 'Onion', 'Stock cubes'],
+    story: ['Seeds of Heritage, Bowls of Gold', 'Hidden within the flesh of a humble melon lie seeds that become one of the most treasured soups in Nigeria. Egusi, ground melon seeds transforms into a rich, golden soup that has nourished generations. Long before written records, indigenous peoples discovered that these seeds, when dried and ground, could create something magnificent. Each ethnic group developed their own variation. The Yoruba make "Efo Elegusi" with generous leafy vegetables. The Igbo prepare "Ofe Egusi" with distinctive floating lumps. Yet all share that unmistakable nutty, earthy flavor that only egusi provides. The preparation was traditionally passed from mother to daughters secrets about oil temperature, when to add the paste, how to balance bitter leaf with rich seeds. Palm oil is an essential partner of Egusi, creating a soup of stunning color burnt orange meeting forest green when vegetables are added. In many Nigerian homes, Egusi Soup is reserved for special occasions and Sunday meals, when families gather around bowls of steaming soup and freshly pounded yam. For Nigerians in diaspora, Egusi Soup is perhaps the most powerful taste of home. Video calls often include tearful moments when elderly parents watch their children abroad eat the soup they taught them to make. It connects generations across oceans.',],
+    ingredients: [
+      '2 cups ground egusi (melon seeds)',
+      '1/2 cup palm oil',
+      '1 lb beef or assorted meat',
+      '1/2 lb stockfish or dried fish',
+      '2 cups spinach or bitter leaf, chopped',
+      '2 tablespoons ground crayfish',
+      '1 medium onion',
+      '2 scotch bonnet peppers, blended',
+      '1 tablespoon locust beans(iru/dawadawa)',
+      'Salt and seasoning cubes to taste',
+],
     steps: ['Brown meat and set aside.', 'Fry onion in palm oil, add ground egusi and toast lightly.', 'Add stock gradually, add meat and simmer.', 'Stir in greens and finish with seasoning.'],
-    external: { label: 'Full Egusi recipe', url: 'https://example.com/egusi-recipe' }
+    external: { label: 'Full Egusi recipe', url: 'https://www.youtube.com/watch?v=UHe8K6uM-Z0' }
   },
 
   peppersoup:
@@ -59,10 +96,11 @@ const stories = {
     teaser: 'A spicy, aromatic broth often made with fish, goat or chicken.', 
     occasion: 'NightLife', 
     cuisine: 'Premium',
-    story: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.  \nLorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    ingredients: ['Meat or fish', 'Pepper soup spices', 'Onion', 'Fresh herbs'],
+    story: ['Medicine, Comfort, and Fire in a Bowl', 'When the body is tired or sickness threatens, Nigerians turn to one prescription that crosses all ethnic and religious lines: Pepper Soup. This fiery, aromatic broth is medicine and comfort combined—a bowl of heat believed to cure almost anything. Traditional healers understood that certain spices had medicinal properties, and they created broths combining these ingredients with rich meat stock. The key is the spice blend—grains of selim, calabash nutmeg, negro pepper, alligator pepper—each contributing flavor and supposed medicinal benefit. Family recipes are guarded carefully. Pepper Soup is what you eat after childbirth, what those recovering from illness are fed, what cold victims seek out. Nigerian mothers keep pepper soup spices ready at all times."Pepper Soup joints" are establishments that stay open late into the night, where friends gather after work, deals are discussed, and conversations flow freely. Goat meat Pepper Soup holds special status—the meat releasing its essence into the broth while remaining tender, the aroma rising in steam. Catfish Pepper Soup, called "Point and Kill," involves customers pointing to live fish in tanks, prepared fresh. Pepper Soup reminds us that food can heal. When Nigerians are far from home and feeling unwell, they crave Pepper Soup above all else. It is care in liquid form, warmth that penetrates to the soul.',],
+  ingredients: ['2 lbs goat meat, cut into pieces', '2 tablespoons pepper soup spice', '1 medium onion, chopped', '1 tablespoon ground crayfish', '2-3 scotch bonnet peppers', '4 cloves garlic, minced',
+         '1 inch fresh ginger, grated', '1 teaspoon thyme', 'Uziza or scent leaves for garnish', 'Salt and seasoning cubes to taste', '8 cups water'],
     steps: ['Boil meat until tender.', 'Add pepper soup spice mix and simmer briefly.', 'Finish with fresh herbs and serve hot.'],
-    external: { label: 'Pepper soup guide', url: 'https://example.com/pepper-soup' }
+    external: { label: 'Pepper soup guide', url: 'https://www.youtube.com/watch?v=9aOKjLE-uFE' }
   },
 
   akara:
@@ -73,10 +111,10 @@ const stories = {
     teaser: 'Crispy fritters made from blended black-eyed peas.', 
     occasion: 'NightLife', 
     cuisine: 'Comfort',
-    story: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.  \nLorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    ingredients: ['2 cups black-eyed peas (peeled)', '1 onion', 'Salt', 'Oil for frying'],
-    steps: ['Soak and peel the beans, blend with onion to a thick batter.', 'Season, then deep-fry spoonfuls until golden and crisp.'],
-    external: { label: 'Akara recipe website', url: 'https://example.com/akara' }
+    story: ['Golden Dawn Blessing', 'As dawn breaks over Nigerian cities, a transformation begins. Black-eyed peas, soaked overnight, are ground into fluffy batter and dropped into hot oil, emerging as Akara—golden, crispy, and ready to start the day. This breakfast blessing has transcended borders, traveling with enslaved Africans to Brazil where it became "Acarajé," now famous street food in Salvador. Making Akara separates dedicated cooks from casual ones. Beans must be properly peeled, ground to the right consistency, and beaten vigorously until the batter holds peaks. The oil must be exactly right. The dropping technique, the timing of the flip—everything matters. Akara vendors set up before dawn; by the time most people wake, the air is already perfumed with frying beans. The traditional pairing is with Ogi—fermented corn porridge called Pap. Crispy, savory Akara with smooth, slightly sour porridge is one of the perfect breakfasts in West Africa. Alternatively, Akara stuffed in fresh bread creates "Akara and Bread"—street food perfection.Akara carries strong associations with Saturday mornings—time for this more involved meal when families gather, children dip Akara into hot Pap, and the weekend officially begins. For many Nigerians, this is the taste of childhood Saturdays, of leisure, of family time.'],
+    ingredients: ['2 cups black-eyed peas (peeled)', '1 medium onion, roughly chopped', 'Salt to taste', 'Vegetable oil for frying'],
+    steps: ['Soak beans for 5-10 minutes, then rub to remove skins.','Rinse repeatedly until beans are completely peeled.', 'Blend beans with peppers and minimal water to form a thick, smooth batter.', 'Do not over-blend or add too much water.', 'Transfer to a bowl and whip vigorously with a wooden spoon or mixer to incorporate air.', 'The batter should become light and fluffy.', 'Add diced onions and salt just before frying.', 'Heat oil to 350°F/175°C (about 3 inches deep).', 'Scoop batter with a spoon and drop carefully into hot oil.', 'Fry until golden brown on all sides (4-5 minutes).', 'Drain on paper towels. Serve hot with pap, bread, or pepper sauce.'],
+    external: { label: 'Akara recipe website', url: 'https://www.youtube.com/watch?v=r2hVi_f4M6g'}
   },
 
   okro: {

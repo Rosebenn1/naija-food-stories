@@ -1,5 +1,9 @@
 /* WRITE YOUR JS HERE... YOU MAY REQUIRE MORE THAN ONE JS FILE. IF SO SAVE IT SEPARATELY IN THE SCRIPTS DIRECTORY */
 // Mobile nav toggle
+
+import {stories as data} from "./data.js" 
+console.log(data);
+
 const toggle = document.getElementById('navToggle');
 const navList = document.getElementById('nav-list');
 if (toggle && navList) {

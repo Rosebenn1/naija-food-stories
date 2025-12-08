@@ -1,8 +1,5 @@
 //story.html logic
-
-import {stories as data} from "./data.js"
-/*
-const data = {
+const stories = {
   jollof: {
     title: 'Jollof Rice',
     region: 'Western',
@@ -472,92 +469,6 @@ const data = {
     external: { label: 'Peppered fish recipe', url: 'https://www.youtube.com/watch?v=hOFhCCy-qQY' }
   }
 };
-*/
 
-function getQueryParam(name) {
-  const params = new URLSearchParams(location.search);
-  return params.get(name);
-}
 
-function renderStory(id) {
-  const root = document.getElementById('storyRoot');
-  console.log(root);
-  // const s = data[id];
-  const s = data[id];
-  if (!s) {
-    root.innerHTML = '<div class="hero"><h1>Story not found</h1><p class="meta">The requested story does not exist.</p></div>';
-    return;
-  }
-
-  root.innerHTML = `
-        <div class="story-hero">
-          <img src="${s.image}" alt="${s.title}">
-          <h1>${s.title}</h1>
-          <div class="story-meta">${s.region}</div>
-          <p class="story-teaser">${s.teaser}</p>
-        </div>
-
-        <div class="section">
-          <h2>Story behind this dish</h2>
-          <p class="story-writeup"> ${s.story}</p>
-          <a class="btn btn-primary view-recipe" id="openModalBtn">View Recipe</a>
-        </div>
-
-      `;
-}
-
-const id = getQueryParam('id');
-renderStory(id);
-
-// Modal logic
-const openModalBtn = document.getElementById('openModalBtn');
-const closeModalBtn = document.getElementById('closeModalBtn');
-const myModal = document.getElementById('myModal');
-const overlay = document.getElementById('overlay');
-
-openModalBtn.addEventListener('click', () => {
-  renderRecipe(id);
-  myModal.classList.remove('hidden');
-  overlay.classList.remove('hidden');
-});
-
-closeModalBtn.addEventListener('click', () => {
-  myModal.classList.add('hidden');
-  overlay.classList.add('hidden');
-});
-
-overlay.addEventListener('click', () => {
-  myModal.classList.add('hidden');
-  overlay.classList.add('hidden');
-});
-
-function renderRecipe(id) {
-  const root = document.getElementById('recipeRoot');
-  const r = data[id];
-  if (!r) {
-    root.innerHTML = '<div class="story-hero"><h1>Recipe not found</h1><p class="story-meta">No recipe matches that id.</p></div>';
-    return;
-  }
-
-  root.innerHTML = `
-        <div class="recipe-hero">
-          <h1>${r.title}</h1>
-          <p class="story-meta">Ingredients & preparation</p>
-        </div>
-
-        <div class="section">
-          <h2>Ingredients</h2>
-          <div class="ingredients">
-            ${r.ingredients.map(i => `<div>• ${i}</div>`).join('')}
-          </div>
-        </div>
-
-        <div class="section">
-          <h2>Steps</h2>
-          <ol class="steps">
-            ${r.steps.map(s => `<li>${s}</li>`).join('')}
-          </ol>
-           <p><a class="btn btn-primary external-link" href="${r.external.url}" target="_blank" rel="noopener noreferrer">${r.external.label}</a></p>
-        </div>
-      `;
-}
+export { stories };

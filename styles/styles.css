@@ -779,7 +779,6 @@ pre.recipe {
 /* ===== DOCUMENTS SECTION ===== */
 .docs-section {
     background: #000000;
-    padding: 3rem 1.125rem 4rem;
 }
 
 .docs-container {
@@ -865,7 +864,6 @@ pre.recipe {
 /* ===== CONTACT SECTION ===== */
 .contact-section {
     background: #1A1A1A;
-    padding: 3rem 1.125rem;
     text-align: center;
     border-top: 0.0625rem solid rgba(128, 128, 128, 0.12);
     margin-top: 2rem;

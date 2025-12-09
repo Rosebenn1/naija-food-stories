@@ -447,7 +447,7 @@ const stories = {
   pepperedfish: {
     title: 'Peppered Fish', 
     region: 'Coastal', 
-    image: 'images/peppered-fish-1.jpeg', 
+    image: 'images/pepperedfish.jpg', 
     teaser: 'Spicy fried fish in a rich pepper sauce, a popular Nigerian party appetizer.', 
     occasion: 'NightLife', 
     cuisine: 'Street', 

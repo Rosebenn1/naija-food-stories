@@ -17,13 +17,14 @@
         href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@600;700&family=Inter:wght@300;400;600;700&display=swap"
         rel="stylesheet">
     <!-- LINK TO YOUR STYLES -->
+     <link rel="icon" href="images/logo.jpg" type="image/jpg">
     <link rel="stylesheet" href="styles/styles.css" />
     <!-- LINK TO EXTERNAL JS LIBRARIES HERE -->
     <!-- LINK TO YOUR JS HERE. NOTE THE DEFER ATTRIBUTE. -->
     <script rel="javascript" src="scripts/scripts.js" type="module" defer></script>
   </head>
 
-  <body>
+<body>
     <nav class="site-nav" role="navigation" aria-label="Main navigation">
         <div class="brand" role="link" aria-label="Naija Food Stories home">
             <div class="logo" aria-hidden="true">NFS</div>
@@ -36,8 +37,7 @@
 
         <div class="nav-links" id="nav-list" role="menubar" aria-label="Primary">
             <a href="index.html" id="nav-home">Home</a>
-            <a href="#about" id="nav-about">About</a>
-           
+            <a href="about.html" id="nav-about">About</a>
         </div>
     </nav>
 
@@ -57,7 +57,6 @@
             </form>
 
             <div class="filters-column" aria-label="Region filters">
-
                 <div class="region-filters" role="toolbar" aria-label="Quick region filters">
                     <button class="region-card" data-region="all" aria-pressed="true" type="button">
                         All regions
@@ -74,8 +73,6 @@
                         Northern
                     </button>
                 </div>
-
-            
             </div>
         </div>
 
@@ -83,7 +80,7 @@
             <form class="search-box" role="search" action="#" method="get" aria-label="Search recipes">
                  <input id="q" type="search" name="q" placeholder="Search dishes, ingredients, or regions..."
                     aria-label="Search">
-                <div class="inline-filters" >
+                <div class="inline-filters">
                     <div class="inline-filter" title="Region filter">
                         <select id="regionInline" name="region" aria-label="Region">
                             <option value="all">All regions</option>
@@ -104,15 +101,13 @@
 
                     <div class="inline-filter" title="Occasion filter">
                         <select id="occasionInline" name="occasion" aria-label="Occasion">
-                            <option value="any">All Ocassions</option>
+                            <option value="any">All Occasions</option>
                             <option value="wedding">Weddings</option>
                             <option value="birthday">Birthdays</option>
                             <option value="nightlife">Night-Life</option>
                         </select>
                     </div>
                 </div>
-               
-
             </form>
         </div>
     </section>
@@ -121,20 +116,17 @@
         <section id="regions" aria-label="Regions grid">
             <div class="cards-grid" role="list">
                 <!-- Stories are rendered by the javascript here -->
-                
             </div>
         </section>
-        
     </main>
 
     <footer role="contentinfo">
         <div class="footer-inner">           
             <nav class="footer-links" aria-label="Footer">
-                <a href="#about">About</a>
+                <a href="about.html">About</a>
             </nav>
         </div>
-    </footer>
-                
+    </footer>               
     <!-- YOUR EXTERNAL PLUG-IN MAY ASK YOU TO PUT A SCRIPT TAG HERE. -->
   </body>
 </html>

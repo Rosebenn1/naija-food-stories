@@ -481,83 +481,140 @@ function getQueryParam(name) {
 
 function renderStory(id) {
   const root = document.getElementById('storyRoot');
-  console.log(root);
-  // const s = data[id];
   const s = data[id];
+  
   if (!s) {
     root.innerHTML = '<div class="hero"><h1>Story not found</h1><p class="meta">The requested story does not exist.</p></div>';
     return;
   }
 
+  // Handle story that might be an array (like suya, egusi, etc.)
+  const storyText = Array.isArray(s.story) ? s.story.join('\n\n') : s.story;
+
   root.innerHTML = `
-        <div class="story-hero">
-          <img src="${s.image}" alt="${s.title}">
-          <h1>${s.title}</h1>
-          <div class="story-meta">${s.region}</div>
-          <p class="story-teaser">${s.teaser}</p>
-        </div>
+    <div class="story-hero">
+      <img src="${s.image}" alt="${s.title}">
+      <h1>${s.title}</h1>
+      <div class="story-meta">${s.region}</div>
+      <p class="story-teaser">${s.teaser}</p>
+    </div>
 
-        <div class="section">
-          <h2>Story behind this dish</h2>
-          <p class="story-writeup"> ${s.story}</p>
-          <a class="btn btn-primary view-recipe" id="openModalBtn">View Recipe</a>
-        </div>
+    <div class="section">
+      <h2>Story behind this dish</h2>
+      <p class="story-writeup">${storyText}</p>
+      <a class="btn btn-primary view-recipe" id="openModalBtn" href="#" role="button">View Recipe</a>
+    </div>
+  `;
 
-      `;
+  // Attach event listener after rendering
+  const openModalBtn = document.getElementById('openModalBtn');
+  if (openModalBtn) {
+    openModalBtn.addEventListener('click', handleOpenModal);
+  }
 }
 
-const id = getQueryParam('id');
-renderStory(id);
+// Store scroll position for body lock
+let scrollPosition = 0;
 
-// Modal logic
-const openModalBtn = document.getElementById('openModalBtn');
-const closeModalBtn = document.getElementById('closeModalBtn');
-const myModal = document.getElementById('myModal');
-const overlay = document.getElementById('overlay');
-
-openModalBtn.addEventListener('click', () => {
-  renderRecipe(id);
+function openModal() {
+  const myModal = document.getElementById('myModal');
+  const overlay = document.getElementById('overlay');
+  
+  // Save scroll position and lock body (prevents background scrolling on mobile)
+  scrollPosition = window.pageYOffset;
+  document.body.style.overflow = 'hidden';
+  document.body.style.position = 'fixed';
+  document.body.style.top = `-${scrollPosition}px`;
+  document.body.style.width = '100%';
+  
+  // Show modal
   myModal.classList.remove('hidden');
   overlay.classList.remove('hidden');
-});
+  
+  // Focus the close button for accessibility
+  const closeBtn = document.getElementById('closeModalBtn');
+  if (closeBtn) {
+    closeBtn.focus();
+  }
+}
 
-closeModalBtn.addEventListener('click', () => {
+function closeModal() {
+  const myModal = document.getElementById('myModal');
+  const overlay = document.getElementById('overlay');
+  
+  // Hide modal
   myModal.classList.add('hidden');
   overlay.classList.add('hidden');
-});
+  
+  // Restore body scroll
+  document.body.style.overflow = '';
+  document.body.style.position = '';
+  document.body.style.top = '';
+  document.body.style.width = '';
+  window.scrollTo(0, scrollPosition);
+}
 
-overlay.addEventListener('click', () => {
-  myModal.classList.add('hidden');
-  overlay.classList.add('hidden');
-});
+function handleOpenModal(e) {
+  e.preventDefault();
+  const id = getQueryParam('id');
+  renderRecipe(id);
+  openModal();
+}
 
 function renderRecipe(id) {
   const root = document.getElementById('recipeRoot');
   const r = data[id];
+  
   if (!r) {
-    root.innerHTML = '<div class="story-hero"><h1>Recipe not found</h1><p class="story-meta">No recipe matches that id.</p></div>';
+    root.innerHTML = '<div class="recipe-hero"><h1>Recipe not found</h1><p class="story-meta">No recipe matches that id.</p></div>';
     return;
   }
 
   root.innerHTML = `
-        <div class="recipe-hero">
-          <h1>${r.title}</h1>
-          <p class="story-meta">Ingredients & preparation</p>
-        </div>
+    <div class="recipe-hero">
+      <h1 id="modal-title">${r.title}</h1>
+      <p class="story-meta">Ingredients & preparation</p>
+    </div>
 
-        <div class="section">
-          <h2>Ingredients</h2>
-          <div class="ingredients">
-            ${r.ingredients.map(i => `<div>• ${i}</div>`).join('')}
-          </div>
-        </div>
+    <div class="section">
+      <h2>Ingredients</h2>
+      <div class="ingredients">
+        ${r.ingredients.map(i => `<div>• ${i}</div>`).join('')}
+      </div>
+    </div>
 
-        <div class="section">
-          <h2>Steps</h2>
-          <ol class="steps">
-            ${r.steps.map(s => `<li>${s}</li>`).join('')}
-          </ol>
-           <p><a class="btn btn-primary external-link" href="${r.external.url}" target="_blank" rel="noopener noreferrer">${r.external.label}</a></p>
-        </div>
-      `;
+    <div class="section">
+      <h2>Steps</h2>
+      <ol class="steps">
+        ${r.steps.map(step => `<li>${step}</li>`).join('')}
+      </ol>
+      ${r.external ? `<p><a class="btn btn-primary external-link" href="${r.external.url}" target="_blank" rel="noopener noreferrer">${r.external.label}</a></p>` : ''}
+    </div>
+  `;
 }
+
+// Initialize the page
+const id = getQueryParam('id');
+renderStory(id);
+
+// Modal event listeners
+const closeModalBtn = document.getElementById('closeModalBtn');
+const overlay = document.getElementById('overlay');
+
+if (closeModalBtn) {
+  closeModalBtn.addEventListener('click', closeModal);
+}
+
+if (overlay) {
+  overlay.addEventListener('click', closeModal);
+}
+
+// Close modal on Escape key
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') {
+    const myModal = document.getElementById('myModal');
+    if (myModal && !myModal.classList.contains('hidden')) {
+      closeModal();
+    }
+  }
+});

@@ -712,6 +712,230 @@ pre.recipe {
     margin-top: 1rem;
 }
 
+/* ===== ABOUT PAGE HERO ===== */
+.about-hero {
+    background-color: #000000;
+    background-image: url('images/dishes.jpeg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    padding: 7rem 1.125rem 4rem;
+    text-align: center;
+    color: #ffffff;
+    min-height: 16rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.about-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.85) 100%);
+    pointer-events: none;
+}
+
+.about-hero-inner {
+    max-width: 50rem;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+.about-hero h1 {
+    font-family: "Crimson Pro", serif;
+    font-size: clamp(1.75rem, 5vw, 2.75rem);
+    margin: 0 0 1rem;
+    line-height: 1.2;
+}
+
+.about-hero h1::after {
+    content: '';
+    display: block;
+    width: 4rem;
+    height: 0.1875rem;
+    background: #D4AF37;
+    margin: 1rem auto 0;
+}
+
+.about-hero p {
+    font-size: 1.0625rem;
+    color: #B0B0B0;
+    margin: 0;
+    line-height: 1.6;
+}
+
+.about-main {
+    background: #000000;
+    min-height: 50vh;
+}
+
+/* ===== DOCUMENTS SECTION ===== */
+.docs-section {
+    background: #000000;
+    padding: 3rem 1.125rem 4rem;
+}
+
+.docs-container {
+    max-width: 60rem;
+    margin: 0 auto;
+}
+
+.docs-header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+.docs-header h2 {
+    font-family: "Crimson Pro", serif;
+    font-size: clamp(1.5rem, 4vw, 2rem);
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+    color: #ffffff;
+}
+
+.docs-header p {
+    font-size: 1rem;
+    color: #B0B0B0;
+    margin: 0;
+}
+
+.docs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+    gap: 1.5rem;
+}
+
+.doc-card {
+    background: #1A1A1A;
+    border: 0.0625rem solid rgba(198, 40, 40, 0.2);
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 0.5rem rgba(198, 40, 40, 0.08);
+}
+
+.doc-card:hover {
+    transform: translateY(-0.25rem);
+    border-color: rgba(198, 40, 40, 0.5);
+    box-shadow: 
+        0 0.5rem 1.5rem rgba(0, 0, 0, 0.4),
+        0 0 1rem rgba(198, 40, 40, 0.2);
+}
+
+.doc-icon {
+    width: 2.75rem;
+    height: 2.75rem;
+    min-width: 2.75rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(198, 40, 40, 0.15);
+    border-radius: 0.5rem;
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+}
+
+.doc-content h3 {
+    font-family: "Crimson Pro", serif;
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin: 0 0 0.5rem;
+    color: #ffffff;
+}
+
+.doc-content p {
+    font-size: 0.875rem;
+    color: #B0B0B0;
+    margin: 0 0 1rem;
+    line-height: 1.5;
+}
+
+.doc-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #C62828;
+    transition: gap 0.2s ease, color 0.2s ease;
+}
+
+.doc-link:hover {
+    gap: 0.75rem;
+    color: #ff4444;
+}
+
+.doc-arrow {
+    transition: transform 0.2s ease;
+}
+
+.doc-link:hover .doc-arrow {
+    transform: translateX(0.25rem);
+}
+
+/* ===== CONTACT SECTION ===== */
+.contact-section {
+    background: #1A1A1A;
+    padding: 3rem 1.125rem;
+    text-align: center;
+    border-top: 0.0625rem solid rgba(128, 128, 128, 0.12);
+    margin-top: 2rem;
+}
+
+.contact-container {
+    max-width: 32rem;
+    margin: 0 auto;
+}
+
+.contact-section h2 {
+    font-family: "Crimson Pro", serif;
+    font-size: clamp(1.375rem, 3vw, 1.75rem);
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+    color: #ffffff;
+}
+
+.contact-section p {
+    font-size: 0.9375rem;
+    color: #B0B0B0;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.contact-btn {
+    padding: 0.75rem 1.75rem;
+    font-size: 0.9375rem;
+    display: inline-block;
+}
+
+/* Responsive for about page */
+@media (max-width: 47.5em) {
+    .about-hero {
+        padding: 5rem 1rem 3rem;
+        min-height: 12rem;
+    }
+    
+    .docs-section {
+        padding: 2rem 1rem 3rem;
+    }
+    
+    .docs-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .contact-section {
+        padding: 2rem 1rem;
+    }
+}
+
 /* ===== RESPONSIVE ===== */
 @media (max-width: 61.25em) {
     .cards-grid {

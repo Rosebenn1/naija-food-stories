@@ -124,7 +124,7 @@ img{
 
 /* HERO */
 .hero{
-    background:#000000 url('/images/dishes.jpeg') center/cover fixed;
+    background:#000000 url('../images/dishes.jpeg') center/cover fixed;
     padding: 3rem 1.125rem;
     text-align:center;
     color:#ffffff;

@@ -61,7 +61,7 @@ const stories = {
       'Wooden skewers, soaked in water',
 ],
     steps: ['Combine all yaji spice ingredients and mix thoroughly.', 'Slice beef very thin, against the grain.', 'Brush meat slices with vegetable oil.', 'Coat generously with yaji spice on all sides.', 'Thread meat onto soaked wooden skewers in accordion style.','Marinate for at least 1 hour (or overnight in refrigerator).', 'Grill over hot charcoal or broil in oven at high heat for 3-4 minutes per side.', 'Sprinkle with more yaji spice before serving.', 'Serve with sliced onions, tomatoes, and fresh cabbage.',],
-    external: { label: 'Suya recipe video', url: 'https://www.youtube.com/watch?v=jrfiEXS0A-M'}
+    external: { label: 'Suya tutorial on YouTube', url: 'https://www.youtube.com/watch?v=jrfiEXS0A-M'}
   },
 
   egusi: {
@@ -85,7 +85,7 @@ const stories = {
       'Salt and seasoning cubes to taste',
 ],
     steps: ['Brown meat and set aside.', 'Fry onion in palm oil, add ground egusi and toast lightly.', 'Add stock gradually, add meat and simmer.', 'Stir in greens and finish with seasoning.'],
-    external: { label: 'Full Egusi recipe', url: 'https://www.youtube.com/watch?v=UHe8K6uM-Z0' }
+    external: { label: 'Full Egusi tutorial on YouTube', url: 'https://www.youtube.com/watch?v=UHe8K6uM-Z0' }
   },
 
   peppersoup:
@@ -100,7 +100,7 @@ const stories = {
     ingredients: ['2 lbs goat meat, cut into pieces', '2 tablespoons pepper soup spice', '1 medium onion, chopped', '1 tablespoon ground crayfish', '2-3 scotch bonnet peppers', '4 cloves garlic, minced',
          '1 inch fresh ginger, grated', '1 teaspoon thyme', 'Uziza or scent leaves for garnish', 'Salt and seasoning cubes to taste', '8 cups water'],
     steps: ['Boil meat until tender.', 'Add pepper soup spice mix and simmer briefly.', 'Finish with fresh herbs and serve hot.'],
-    external: { label: 'Pepper soup guide', url: 'https://www.youtube.com/watch?v=9aOKjLE-uFE' }
+    external: { label: 'Pepper soup tutorial on YouTube', url: 'https://www.youtube.com/watch?v=9aOKjLE-uFE' }
   },
 
   akara:
@@ -114,7 +114,7 @@ const stories = {
     story: ['Golden Dawn Blessing.', 'As dawn breaks over Nigerian cities, a transformation begins. Black-eyed peas, soaked overnight, are ground into fluffy batter and dropped into hot oil, emerging as Akara—golden, crispy, and ready to start the day. This breakfast blessing has transcended borders, traveling with enslaved Africans to Brazil where it became "Acarajé," now famous street food in Salvador. Making Akara separates dedicated cooks from casual ones. Beans must be properly peeled, ground to the right consistency, and beaten vigorously until the batter holds peaks. The oil must be exactly right. The dropping technique, the timing of the flip—everything matters. Akara vendors set up before dawn; by the time most people wake, the air is already perfumed with frying beans. The traditional pairing is with Ogi—fermented corn porridge called Pap. Crispy, savory Akara with smooth, slightly sour porridge is one of the perfect breakfasts in West Africa. Alternatively, Akara stuffed in fresh bread creates "Akara and Bread"—street food perfection.Akara carries strong associations with Saturday mornings—time for this more involved meal when families gather, children dip Akara into hot Pap, and the weekend officially begins. For many Nigerians, this is the taste of childhood Saturdays, of leisure, of family time.'],
     ingredients: ['2 cups black-eyed peas (peeled)', '1 medium onion, roughly chopped', 'Salt to taste', 'Vegetable oil for frying'],
     steps: ['Soak beans for 5-10 minutes, then rub to remove skins.','Rinse repeatedly until beans are completely peeled.', 'Blend beans with peppers and minimal water to form a thick, smooth batter.', 'Do not over-blend or add too much water.', 'Transfer to a bowl and whip vigorously with a wooden spoon or mixer to incorporate air.', 'The batter should become light and fluffy.', 'Add diced onions and salt just before frying.', 'Heat oil to 350°F/175°C (about 3 inches deep).', 'Scoop batter with a spoon and drop carefully into hot oil.', 'Fry until golden brown on all sides (4-5 minutes).', 'Drain on paper towels. Serve hot with pap, bread, or pepper sauce.'],
-    external: { label: 'Akara recipe website', url: 'https://www.youtube.com/watch?v=r2hVi_f4M6g'}
+    external: { label: 'Akara tutorial on YouTube', url: 'https://www.youtube.com/watch?v=r2hVi_f4M6g'}
   },
 
   okro: {
@@ -136,7 +136,7 @@ const stories = {
       'Add leafy vegetables if using. Stir and cook for 3-5 minutes.',
       'Adjust salt and seasoning to taste. The soup should have a "slimy" consistency.',
       'Serve hot with pounded yam, eba, fufu, or amala.',],
-    external: { label: 'Okro soup tutorial', 
+    external: { label: 'Okro soup tutorial on YouTube', 
     url: 'https://www.youtube.com/watch?v=bV2sg6mmSH8'}
   },
   moimoi:
@@ -160,7 +160,7 @@ const stories = {
       'Steam for 45 minutes to 1 hour until firm and cooked through.',
       'Allow to cool slightly before serving. Enjoy with pap, custard, or as a side dish.',
 ],
-    external: { label: 'Moin Moin guide', url: 'https://www.youtube.com/watch?v=YZ6V1CeP3TU'}
+    external: { label: 'Moin Moin tutorial on YouTube', url: 'https://www.youtube.com/watch?v=YZ6V1CeP3TU'}
   },
   ogbono: {
     title: 'Ogbono Soup', 
@@ -182,7 +182,7 @@ const stories = {
         'Add washed bitter leaf or spinach if using. Cook for 2-3 minutes.',
         'Adjust seasoning and serve with pounded yam, eba, or fufu.',
 ],
-    external: { label: 'Ogbono recipe', url: 'https://www.youtube.com/watch?v=kahuJ68GaTk'}
+    external: { label: 'Ogbono tutorial on YouTube', url: 'https://www.youtube.com/watch?v=kahuJ68GaTk'}
   },
 
   nkwobi:
@@ -207,7 +207,7 @@ const stories = {
       'Add ugba if using. Heat through for 2-3 minutes.',
       'Garnish with sliced utazi leaves and onion rings. Serve in a wooden bowl.',
 ],
-    external: { label: 'Nkwobi recipe', url: 'https://www.youtube.com/watch?v=zX3Ed_4JzGw' }
+    external: { label: 'Nkwobi tutorial on YouTube', url: 'https://www.youtube.com/watch?v=zX3Ed_4JzGw' }
   },
   banga:
   {
@@ -231,7 +231,7 @@ const stories = {
         'Add scent leaves if using. Cook for 2 more minutes.',
         'Serve with starch, eba, or pounded yam.',
 ],
-    external: { label: 'Banga recipe', url: 'https://www.youtube.com/watch?v=3n2lYmpzGKg'}
+    external: { label: 'Banga tutorial on YouTube', url: 'https://www.youtube.com/watch?v=3n2lYmpzGKg'}
   },
   amala:
   {
@@ -252,7 +252,7 @@ const stories = {
        'Mold into balls using a wet spoon or plastic wrap.',
        'Serve immediately with gbegiri (bean soup), ewedu, or any soup of choice.',
 ],
-    external: { label: 'Amala instructions', url: 'https://www.youtube.com/watch?v=KbYJj_gSZME'}
+    external: { label: 'Amala tutorial on YouTube', url: 'https://www.youtube.com/watch?v=KbYJj_gSZME'}
   },
   eforiro: {
     title: 'Efo Riro', 
@@ -275,7 +275,7 @@ const stories = {
       'Add the chopped vegetables. Stir and cook for 3-5 minutes only (to retain color).',
       'Adjust seasoning and serve with pounded yam, amala, or eba.',
 ],
-    external: { label: 'Efo riro recipe', url: 'https://www.youtube.com/watch?v=JBeamZQiL0s' }
+    external: { label: 'Efo riro tutorial on YouTube', url: 'https://www.youtube.com/watch?v=JBeamZQiL0s' }
   },
   nsala:
   {
@@ -299,7 +299,7 @@ const stories = {
       'Slice the utazi or uziza leaves thinly. Add to the soup.',
       'Simmer for 2-3 minutes. Adjust seasoning and serve with pounded yam or fufu.'
     ],
-    external: { label: 'Nsala recipe', url: 'https://www.youtube.com/watch?v=FXI1dAdwl-8' }
+    external: { label: 'Nsala tutorial on YouTube', url: 'https://www.youtube.com/watch?v=FXI1dAdwl-8' }
   },
   ofada:
   {
@@ -323,7 +323,7 @@ const stories = {
       'Add boiled eggs if using. Adjust seasoning.',
       'Serve with Ofada rice (local brown rice) wrapped in banana leaves',
 ],
-    external: { label: 'Ofada rice guide', url: 'https://www.youtube.com/watch?v=_GvgEz4G4LM' }
+    external: { label: 'Ofada tutorial on YouTube', url: 'https://www.youtube.com/watch?v=_GvgEz4G4LM' }
   },
   asaro:
   {
@@ -348,7 +348,7 @@ const stories = {
      'Gently mash some of the yam to create a thick, porridge-like consistency.',
      'Add vegetables if using. Cook for 2-3 more minutes and serve.',
 ],
-    external: { label: 'Asaro recipe', url: 'https://www.youtube.com/watch?v=nFeYik8ziUQ' }
+    external: { label: 'Asaro tutorial on YouTube', url: 'https://www.youtube.com/watch?v=nFeYik8ziUQ' }
   },
   isi_ewu:
   {
@@ -373,7 +373,7 @@ const stories = {
       'Add ugba if using. Heat through for 2-3 minutes.',
       'Garnish with utazi leaves and onion rings. Serve in a wooden bowl.',
 ],
-    external: { label: 'Isi Ewu instructions', url: 'https://www.youtube.com/watch?v=eIDUn0MsLjE'}
+    external: { label: 'Isi Ewu tutorial on YouTube', url: 'https://www.youtube.com/watch?v=eIDUn0MsLjE'}
   },
   okpa: {
     title: 'Okpa', 
@@ -396,7 +396,7 @@ const stories = {
       'Steam for 45 minutes to 1 hour until firm.',
      'Allow to cool slightly before unwrapping. Serve with pap or on its own.',
 ],
-    external: { label: 'Okpa recipe', url: 'https://www.youtube.com/watch?v=j09cGE43wHY' }
+    external: { label: 'Okpa tutorial on YouTube', url: 'https://www.youtube.com/watch?v=j09cGE43wHY' }
   },
   ofeowerri: {
     title: 'Ofe Owerri', 
@@ -419,7 +419,7 @@ const stories = {
       'Add shredded okazi and ugu leaves.',
       'Stir and cook for 3-5 minutes. Adjust seasoning and serve with fufu or pounded yam.',
 ],
-    external: { label: 'Ofe Owerri', url: 'https://www.youtube.com/watch?v=Kqi0qYDJAtw' }
+    external: { label: 'Ofe Owerri tutorial on YouTube', url: 'https://www.youtube.com/watch?v=Kqi0qYDJAtw' }
   },
   ukwa: {
     title: 'Ukwa (Breadfruit)', 
@@ -442,7 +442,7 @@ const stories = {
        'Add scent leaves or bitter leaf. Cook for 2-3 minutes.',
        'Serve warm. The porridge thickens as it cools.'
 ],
-    external: { label: 'Ukwa guide', url: 'https://www.youtube.com/watch?v=0YLBU7SoUlE' }
+    external: { label: 'Ukwa tutorial on YouTube', url: 'https://www.youtube.com/watch?v=0YLBU7SoUlE' }
   },
   pepperedfish: {
     title: 'Peppered Fish', 
@@ -466,7 +466,7 @@ const stories = {
       'Spoon sauce over fish and simmer for 5-10 minutes.',
       'Garnish with sliced onions and serve hot.'
     ],
-    external: { label: 'Peppered fish recipe', url: 'https://www.youtube.com/watch?v=hOFhCCy-qQY' }
+    external: { label: 'Peppered fish tutorial on YouTube', url: 'https://www.youtube.com/watch?v=hOFhCCy-qQY' }
   }
 };
 

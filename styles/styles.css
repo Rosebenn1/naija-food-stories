@@ -720,7 +720,7 @@ pre.recipe {
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: scroll;
-    padding: 7rem 1.125rem 4rem;
+    /*padding: 2rem 0.5rem 2rem;*/
     text-align: center;
     color: #ffffff;
     min-height: 16rem;
